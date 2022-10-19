@@ -16,19 +16,18 @@ const Login = {
     },
     view: () => {
         return [
-            m(HeaderPublic),
             m(FormLogin),
         ];
     },
 };
 
 function submitLogin() {
-    document.onkeypress = function (e) {
+    document.onkeypress = function(e) {
         if (!e) e = window.event;
         var keyCode = e.keyCode || e.which;
         if (keyCode == "13") {
             if (Auth.canSubmit()) {
-                $('button').click();
+                document.querySelector('button').click();
             }
         }
     };

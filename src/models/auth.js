@@ -50,14 +50,14 @@ const Auth = {
         Auth.imputDisabled = true;
         Auth.setProcess();
         return m.request({
-            method: "POST",
-            url: "https://api.hospitalmetropolitano.org/t/v1/auth",
-            body: {
-                user: Auth.username,
-                pass: Auth.password
-            }
-        })
-            .then(function (data) {
+                method: "POST",
+                url: "https://api.hospitalmetropolitano.org/t/v1/auth",
+                body: {
+                    user: Auth.username,
+                    pass: Auth.password
+                }
+            })
+            .then(function(data) {
 
                 if (data.status) {
                     window.localStorage.accessToken = data.jwt;
@@ -67,7 +67,7 @@ const Auth = {
                     Auth.modulesAccess = data.data.modulesAccess;
                     Encrypt.setDataUser({ user: Auth.user, modulesAccess: Auth.modulesAccess })
                     Auth.setSuccess('¡Bienvenido!');
-                    setTimeout(function () {
+                    setTimeout(function() {
                         Auth.imputDisabled = false;
                         Auth.statusHide = "d-none";
                         Auth.statusError = "warning";
@@ -85,7 +85,7 @@ const Auth = {
                 }
 
 
-            }).catch(function (error) {
+            }).catch(function(error) {
                 Auth.imputDisabled = false;
                 Auth.statusHide = "d-none";
                 Auth.statusError = "warning";

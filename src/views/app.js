@@ -5,7 +5,7 @@ import Encrypt from '../models/encrypt';
 
 
 const App = {
-    title: "MetroPlus v1.0.0",
+    title: "Telemedicina Metrored v4.0",
     oninit: () => {
 
         document.title = "Cargando...";
@@ -25,7 +25,7 @@ const App = {
         if (idModulo !== 0) {
             let _ac = 0;
 
-            Auth.modulesAccess[modulo].map(function (_v, _i, _contentData) {
+            Auth.modulesAccess[modulo].map(function(_v, _i, _contentData) {
                 if (_v.idModulo == idModulo) {
                     _ac++;
                 }
@@ -59,7 +59,7 @@ const App = {
         if (idModulo !== 0) {
             let _ac = 0;
 
-            Auth.modulesAccess[modulo].map(function (_v, _i, _contentData) {
+            Auth.modulesAccess[modulo].map(function(_v, _i, _contentData) {
                 if (_v.idModulo == idModulo) {
                     _ac++;
                 }
@@ -77,7 +77,7 @@ const App = {
     view: () => {
         return [
             m(Loader),
-            setTimeout(function () {
+            setTimeout(function() {
                 App.isAuth()
                 m.route.set('/inicio');
             }, 300)
