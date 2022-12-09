@@ -177,7 +177,6 @@ const Inicio = {
     },
     oncreate: () => {
         document.title = "Inicio | " + App.title;
-        document.body.classList.add('sidebar-collapse');
     },
     view: () => {
         return [
@@ -190,19 +189,7 @@ const Inicio = {
                                 m("div.header__col-left.col.d-flex.align-items-center", [
                                     m("div.header__left-toggle", [
                                         m("button.header__toggle-menu.toggle-sidebar[type='button']", {
-                                                onclick: () => {
 
-                                                    var classes = document.body.getAttribute('class').split(' ');
-                                                    var contains = classes.indexOf('sidebar-collapse') > -1;
-                                                    if (contains) {
-                                                        document.body.classList.remove('sidebar-collapse');
-
-                                                    } else {
-                                                        document.body.classList.add('sidebar-collapse');
-
-                                                    }
-
-                                                }
                                             },
                                             m("svg.icon-icon-menu",
                                                 m("use[xlink:href='#icon-menu']")
